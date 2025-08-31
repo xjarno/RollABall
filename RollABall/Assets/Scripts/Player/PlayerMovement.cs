@@ -1,14 +1,17 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
     // Variables
+    public TextMeshProUGUI strokesText;
     private Rigidbody rb;
+    private int Strokes;
     private float hitForce;
     private float holdDownStartTime;
-    private const float maxForce = 15f;
+    private const float maxForce = 20f;
     [SerializeField] Transform cam;
    
     void Start()
@@ -22,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
         {
         Move();
         }
+        SetStrokesText();
     }
 
     private void Move()
@@ -30,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
         {
             //starttime of when mousebutton is pressed
             holdDownStartTime = Time.time;
-            Debug.Log("Mouse");
         }
 
         if (Input.GetMouseButtonUp(0)) 
@@ -38,10 +41,14 @@ public class PlayerMovement : MonoBehaviour
             //adds force to player in camera direction.
             float holdDownTime = Time.time - holdDownStartTime;
             rb.AddForce(cam.forward.x * CalculateForce(holdDownTime), 0, cam.forward.z * CalculateForce(holdDownTime), ForceMode.Impulse);
-            Debug.Log(CalculateForce(holdDownTime));
+            Strokes++;
         }
     }
 
+    void SetStrokesText()
+    {
+        strokesText.text = "Strokes: " + Strokes.ToString();
+    }
 
     private float CalculateForce(float holdTime) 
     {
@@ -51,5 +58,4 @@ public class PlayerMovement : MonoBehaviour
         hitForce = holdTimeNormalized * maxForce;
         return hitForce;
     }
-
 }
