@@ -300,6 +300,7 @@ GameObject:
   - component: {fileID: 492481274}
   - component: {fileID: 492481273}
   - component: {fileID: 492481275}
+  - component: {fileID: 492481276}
   m_Layer: 0
   m_Name: === Player ===
   m_TagString: Untagged
@@ -363,6 +364,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 390648914}
+--- !u!114 &492481276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492481272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9cbfd13f49283e49b13773df71b86a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &703331828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1581,6 +1594,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4727071638184326218, guid: b0e5dba7654e43b4eacd879b3a868cfc, type: 3}
       propertyPath: m_Name
+      value: Goal
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727071638184326218, guid: b0e5dba7654e43b4eacd879b3a868cfc, type: 3}
+      propertyPath: m_TagString
       value: Goal
       objectReference: {fileID: 0}
     - target: {fileID: 8287134500066016285, guid: b0e5dba7654e43b4eacd879b3a868cfc, type: 3}

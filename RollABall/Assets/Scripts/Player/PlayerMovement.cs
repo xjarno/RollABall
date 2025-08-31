@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
     private float hitForce;
     private float holdDownStartTime;
     private const float maxForce = 15f;
-    private bool isMoving = false;
     [SerializeField] Transform cam;
    
     void Start()
